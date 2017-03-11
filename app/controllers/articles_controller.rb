@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
 # place the standard CRUD actions in the following order: 
 # index, show, new, edit, create, update and destroy
 
+	http_basic_authenticate_with name: "nari", password: "password", except: [:index, :show]
+
 	def index
 		@articles = Article.all
 	end
